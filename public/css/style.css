@@ -1,0 +1,286 @@
+html,body{
+    height: 100%;
+    background: #3498db;
+}
+.sadsd{
+    background: #fff !important;
+    border-radius: 18px !important;
+    text-align: center;
+    color: #000;
+}
+.sdfgsdsdfdf{
+    margin: 0 auto;
+     float: initial;
+    margin-top: 300px;
+}
+*{
+	padding: 0px;
+	margin: 0px;
+}
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.sidenav-trigger {
+  color: #26a69a;
+}
+
+.both{
+    display: block;
+    clear: both;
+}
+
+.chat-box{
+	width: 100%;
+	height: 100%;
+	background: red;
+}
+
+/***** left bar ******/
+
+.left-box {
+
+    background: #2c3e50;
+
+}
+
+
+.right-box{
+    padding: 0px !important;
+    background: #ecf0f1;
+}
+.search-box{
+padding-bottom: 15px !important;
+border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.search-box .icon_prefix{
+text-align: center;
+margin: 0px;
+padding: 0px;
+width: 100%;
+    border: initial;
+    background: #34495e;
+    border-radius: 30px;
+}
+
+.search-box i{
+height: 40px;
+position: absolute !important;
+top: 0px !important;
+line-height: 44px;
+text-align: center;
+font-size: 20px !important;
+color: rgba(255,255,255,0.1);
+
+}
+
+.contacts-child .img {
+    width: 26%;
+}
+.contacts-child .img img{
+    max-width: 100%;
+        border-radius: 100%;
+}
+
+.contacts-child .description{
+width: 74%;
+
+text-align: left;
+position: relative;
+padding-left: 20px;
+}
+.contacts-child .description p{
+    color: #fff;
+}
+.contacts-child .description span{
+position: absolute;
+right: 0px;
+color: rgba(255,255,255,0.3);
+}
+
+.contacts-child  {
+margin-bottom: 10px;
+padding-bottom: 10px;
+border-bottom: 1px solid rgba(255,255,255,0.1);
+padding-left: 10px;
+}
+
+.contacts-child.active {
+
+    border-left: 3px solid #24b400;
+
+}
+
+
+/***** right bar ****/
+.header{
+background: #cfdde1;
+    padding: 10px;
+
+}
+.header .img{
+
+    width: 13%;
+
+}
+.header .img img{
+
+    max-width: 100%;
+    border-radius: 100%;
+
+}
+
+.header .description  {
+
+    width: 87%;
+    padding-left: 20px;
+
+}
+
+.header .description  .name  {
+
+
+}
+.header .description  .name:after  {
+content: "";
+width: 20px;
+height: 20px;
+background: #27ae60;
+position: relative;
+display: block;
+border-radius: 100%;
+}
+
+.chats {
+position: relative;
+    padding: 30px;
+overflow: hidden;
+}
+.mycaht,.hischat { 
+z-index: 999;
+position: relative;
+}
+.mycaht .right{
+
+    padding: 10px 25px;
+    background: #3498db;
+    border-radius: 27px;
+    color: #fff;
+
+}
+
+
+.hischat .left{
+
+    padding: 10px 25px;
+    background: #216a9b;
+    border-radius: 27px;
+    color: #fff;
+
+}
+.sendmessage{
+
+    background: #cfdde1;
+    
+}
+
+    
+.sendmessage .input-field{
+padding: 17px 28px;
+    background: #ecf0f1;
+    margin: 0px;
+}
+.sendmessage .input-field input{
+    border-bottom: initial !important;
+    background: #fff;
+border-radius: 21px;
+padding-left: 13px;
+
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #95a5a6;
+    opacity: 1; /* Firefox */
+}
+.sendmessage .input-field i{
+
+position: absolute;
+color: #95a5a6;
+right: 0px;
+
+height: 47px;
+
+right: 30px;
+
+line-height: 47px;
+
+font-size: 25px;
+
+}
+.background{
+position: absolute;
+width: 100%;
+height: 200%;
+top: -100px;
+left: 0px;
+z-index: 1;
+
+}
+.background img{
+    
+    width: 100%;
+height: 100%;
+}
+
+.background .overlay {
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    top: 0px;
+
+}
+
+
+@media screen and (min-width:700px){
+	.chat-box{
+		width: 80%;
+		margin: 0 auto;
+		/*margin-top: 80px;*/
+		top: 80px;
+		position: relative;
+		height: calc(100% - 160px);
+	}
+}
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta http-equiv = "Content-Type" content = "text/html; charset=UTF-8"/>
+    <meta name = "viewport" content = "width=device-width, initial-scale=1"/>
+    <title>ET CHAT</title>
+
+    <link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+          integrity = "sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+          crossorigin = "anonymous">
+    <link href = "/css/materialize.min.css" type = "text/css" rel = "stylesheet" media = "screen,projection"/>
+    <link href = "/css/style.css" type = "text/css" rel = "stylesheet" media = "screen,projection"/>
+
+    <script>
+        var ws = new WebSocket("ws://localhost:3000");
+
+        ws.onopen = function () {
+            setTitle("Connected to Cyber Chat...");
+            console.log('Connected to Chat client ');
+        };
+
+        ws.onclose = function () {
+            setTitle("Disconnected!");
+            console.log('! Disconnected');
+        };
+
+        ws.onmessage = function (payload) {
+            printMessage(payload.data);
+            console.log(payload.data);
+        };
+        // console.log('sdfsd');
+
+        // var x = document.getElementById('chat-form');
+        var chatform = document.getElementById('chat-form');
+        console.log(chatform);
+        //
+        document.form[0].onsubmit = function () {
+            var input = document.getElementById('message');
+            ws.send(input.value); // send input value to the WebSocket
+            input.value = '';
+            console.log('send');
+            return false;
+        };
+
+        function message()  {
+            var input = document.getElementById('message');
+            ws.send(input.value); // send input value to the WebSocket
+            input.value = '';
+            console.log('send');
+            return false;
+        }
+        //
+        function setTitle(title) {
+            document.querySelector('h1').innerHTML = title;
+        };
+        //
+        function printMessage(message) {
+            var p = document.createElement('p');
+            p.innerText = message;
+            document.querySelector('div.messages').appendChild(p);
+        };
+
+
+    </script>
+</head>
+<body>
+
+<!--
+ <nav class="white" role="navigation">
+   <div class="nav-wrapper container">
+     <a id="logo-container" href="#" class="brand-logo">Logo</a>
+     <ul class="right hide-on-med-and-down">
+       <li><a href="#">Navbar Link</a></li>
+     </ul>
+
+     <ul id="nav-mobile" class="sidenav">
+       <li><a href="#">Navbar Link</a></li>
+     </ul>
+     <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+   </div>
+ </nav>
+-->
+
+
+<div class = "container">
+    <div class = "row">
+
+
+        <div class = "chat-box">
+            <div class = 'col s12 m4 left-box' id = "left-box">
+                <div class = "search-bar">
+
+                    <form>
+
+                        <div class = "input-field search-box col s12">
+                            <i class = "fas fa-search prefix"></i>
+                            <input id = "icon_prefix" placeholder = "search" type = "text" class = "validate">
+                        </div>
+
+                    </form>
+                </div>
+                <div class = "both"></div>
+                <div class = "contact">
+                    <div class = "contacts-child active">
+                        <div class = "img left">
+                            <img src = "img/1.jpg"/>
+                        </div>
+                        <div class = "description right">
+                            <p>Ali</p>
+                            <span>20 min</span>
+                        </div>
+                        <div class = "both"></div>
+                    </div>
+
+
+                    <div class = "contacts-child">
+                        <div class = "img left">
+                            <img src = "img/1.jpg"/>
+                        </div>
+                        <div class = "description right">
+                            <p>Ali</p>
+                            <span>20 min</span>
+                        </div>
+                        <div class = "both"></div>
+                    </div>
+
+
+                    <div class = "contacts-child">
+                        <div class = "img left">
+                            <img src = "img/1.jpg"/>
+                        </div>
+                        <div class = "description right">
+                            <p>Ali</p>
+                            <span>20 min</span>
+                        </div>
+                        <div class = "both"></div>
+                    </div>
+                    <div class = "both"></div>
+                </div>
+                <div class = "both"></div>
+
+
+            </div>
+            <div class = 'col s12 m8 right-box' id = "right-box">
+
+                <div class = "header">
+                    <div class = "img left">
+                        <img src = "img/1.jpg"/>
+                    </div>
+                    <div class = "description right">
+                        <div class = "name">
+                            ali
+                        </div>
+
+                    </div>
+                    <div class = "both"></div>
+                </div>
+
+                <div class = "chats" id="chats">
+                    <div class = "mycaht">
+                        <p class = "right">
+                            salam
+                        </p>
+                        <div class = "both"></div>
+                    </div>
+
+
+                    <div class = "hischat">
+                        <p class = "left">
+                            salam
+                        </p>
+                        <div class = "both"></div>
+
+                    </div>
+                    <div class = "background">
+                        <img src = "img/bg.jpg"/>
+                        <div class = "overlay"></div>
+                    </div>
+                </div>
+
+                <div class = "sendmessage">
+
+
+                    <div class = "input-field col s12">
+                        <i class = "fab fa-telegram-plane"></i>
+                        <form method="post" onsubmit="return submited()">
+                        <input id = "message" type = "text"  placeholder = "type your message ..."
+                               class = "validate icon_prefix">
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<script>
+
+
+    var x = document.getElementById('right-box').offsetHeight;
+    document.getElementById('left-box').style.height = x + "px";
+    console.log(x);
+
+
+</script>
+
+
+<script src = "js/jquery-2.1.1.min.js"></script>
+<script src = "js/materialize.min.js"></script>
+<script src = "js/init.js"></script>
+<script src="../client.js"></script>
+
+
+</body>
+</html>
